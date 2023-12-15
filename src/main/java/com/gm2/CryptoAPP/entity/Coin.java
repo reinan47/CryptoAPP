@@ -1,14 +1,29 @@
-package entity;
+package com.gm2.CryptoAPP.entity;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "coin")
 public class Coin {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int id;
+	@Column(name = "NAME")
 	private String name;
+	@Column(name = "DATETIME")
 	private Timestamp datetime;
+	@Column(name = "PRICE")
 	private BigDecimal price;
+	@Column(name = "QUANTITY")
 	private BigDecimal quantity;
 	
 	public int getId() {
